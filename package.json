@@ -18,7 +18,8 @@
     "nuxt": "^3.7.4"
   },
   "dependencies": {
-    "pocketbase": "^0.18.0"
+    "pocketbase": "^0.18.0",
+    "zod": "^3.22.2"
   },
   "config": {
     "commitizen": {
