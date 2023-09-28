@@ -25,3 +25,4 @@ logs
 
 # PocketBase instance (only development)
 pocketbase/*
+!pocketbase/pb_schema.json
