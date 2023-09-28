@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@vee-validate/nuxt": "^4.11.7",
+    "@vee-validate/zod": "^4.11.7",
     "pocketbase": "^0.18.0",
     "zod": "^3.22.2"
   },

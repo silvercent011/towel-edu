@@ -1387,6 +1387,15 @@
     local-pkg "^0.4.3"
     vee-validate "4.11.7"
 
+"@vee-validate/zod@^4.11.7":
+  version "4.11.7"
+  resolved "https://registry.yarnpkg.com/@vee-validate/zod/-/zod-4.11.7.tgz#b98d4c587d8f9a6caca65699d5e42ca3bdc7befc"
+  integrity sha512-1QONwpY5m93VXimuMLW7nbmvHUGHO3rrTXSM9bxLFWZSggfy5dqepg/RSJBAxlONtjf3P3nqIobGmAfPZrhLzA==
+  dependencies:
+    type-fest "^4.3.1"
+    vee-validate "4.11.7"
+    zod "^3.22.2"
+
 "@vercel/nft@^0.23.1":
   version "0.23.1"
   resolved "https://registry.yarnpkg.com/@vercel/nft/-/nft-0.23.1.tgz#f17c5f9d3f3a0178ea25eb7397a14618c00529bf"
