@@ -34,10 +34,10 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  {{ errors }}
   <BForm
     @submit="onSubmit"
     class="p-4 p-md-5 border rounded-3 bg-body-tertiary"
+    novalidate
   >
     <BFormGroup label="Email:" label-for="email" class="py-2">
       <BFormInput
@@ -46,7 +46,11 @@ const onSubmit = handleSubmit(async (values) => {
         placeholder="someone@domain.com"
         v-model="email"
         required
+        :state="!errors.email"
       />
+      <BFormInvalidFeedback :state="!errors.email">
+        {{ errors.email }}
+      </BFormInvalidFeedback>
     </BFormGroup>
     <BFormGroup label="Senha:" label-for="password" class="py-2">
       <BFormInput
@@ -55,10 +59,20 @@ const onSubmit = handleSubmit(async (values) => {
         placeholder="********"
         v-model="password"
         required
+        :state="!errors.password"
       />
+      <BFormInvalidFeedback :state="!errors.password">
+        {{ errors.password }}
+      </BFormInvalidFeedback>
     </BFormGroup>
 
-    <BButton size="md" variant="primary" class="w-100 py-2" type="submit">
+    <BButton
+      :disabled="!!errors.email || !!errors.password"
+      size="md"
+      variant="primary"
+      class="w-100 py-2"
+      type="submit"
+    >
       Entrar
     </BButton>
     <hr class="my-4" />
