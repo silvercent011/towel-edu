@@ -8,7 +8,7 @@ const schoolYears = (await usePB().collection("school_year").getFullList({
   <BContainer gutter-y="5">
     <BRow class="my-3 w-full">
       <BCol sm="8">
-        <BFormInput placeholder="Buscar Ano Letivo" type="search" />
+        <SchoolYearSearchBar />
       </BCol>
       <BCol sm="4">
         <BButton to="/admin/schoolyear/create" class="w-100" variant="primary"

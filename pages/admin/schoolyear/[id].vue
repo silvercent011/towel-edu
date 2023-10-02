@@ -13,16 +13,7 @@ const data = await GetSchoolYearByID(id);
       <hr />
     </div>
 
-    <BCard>
-      <BCardBody>
-        <BCardTitle> Ano: {{ data.title }} </BCardTitle>
-        <span>Criado em: {{ data.created }}</span>
-        <br />
-        <span>Atualizado em: {{ data.updated }}</span>
-        <br />
-        <span>ID: {{ data.id }}</span>
-      </BCardBody>
-    </BCard>
+    <SchoolYearCard :school_year="data" />
     <BCard class="mt-3" v-if="data.expand && data.expand['class(school_year)']">
       <BCardBody>
         <BCardTitle> Turmas </BCardTitle>
