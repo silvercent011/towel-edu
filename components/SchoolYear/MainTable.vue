@@ -11,7 +11,9 @@ const schoolYears = (await usePB().collection("school_year").getFullList({
         <BFormInput placeholder="Buscar Ano Letivo" type="search" />
       </BCol>
       <BCol sm="4">
-        <BButton class="w-100" variant="primary">Criar Ano Letivo</BButton>
+        <BButton to="/admin/schoolyear/create" class="w-100" variant="primary"
+          >Criar Ano Letivo</BButton
+        >
       </BCol>
     </BRow>
     <BRow>

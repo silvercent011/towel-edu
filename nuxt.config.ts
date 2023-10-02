@@ -8,4 +8,7 @@ export default defineNuxtConfig({
     "@vee-validate/nuxt",
   ],
   css: ["bootstrap/dist/css/bootstrap.min.css"],
+  experimental: {
+    typedPages: true,
+  },
 });

@@ -13,6 +13,10 @@ interface ListTableProps {
 }
 
 defineProps<ListTableProps>();
+
+function toSchoolYearPage(id: string) {
+  navigateTo(`/admin/schoolyear/${id}`);
+}
 </script>
 
 <template>
@@ -26,7 +30,7 @@ defineProps<ListTableProps>();
       </BTr>
     </BThead>
     <BTbody>
-      <BTr v-for="year in schoolYears">
+      <BTr v-for="year in schoolYears" @click="toSchoolYearPage(year.id)">
         <BTd>{{ year.id }}</BTd>
         <BTd>{{ year.title }}</BTd>
         <BTd>{{ year.created }}</BTd>
