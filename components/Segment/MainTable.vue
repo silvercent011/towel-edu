@@ -8,10 +8,12 @@ const segments = (await usePB().collection("segment").getFullList({
   <BContainer gutter-y="5">
     <BRow class="my-3 w-full">
       <BCol sm="8">
-        <BFormInput placeholder="Buscar Segmento" type="search" />
+        <SegmentSearchBar />
       </BCol>
       <BCol sm="4">
-        <BButton class="w-100" variant="primary">Criar Segmento</BButton>
+        <BButton to="/admin/segment/create" class="w-100" variant="primary"
+          >Criar Segmento</BButton
+        >
       </BCol>
     </BRow>
     <BRow>

@@ -13,6 +13,10 @@ interface ListTableProps {
 }
 
 defineProps<ListTableProps>();
+
+function toSegmentPage(id: string) {
+  navigateTo(`/admin/segment/${id}`);
+}
 </script>
 
 <template>
@@ -26,7 +30,7 @@ defineProps<ListTableProps>();
       </BTr>
     </BThead>
     <BTbody>
-      <BTr v-for="year in segments">
+      <BTr v-for="year in segments" @click="toSegmentPage(year.id)">
         <BTd>{{ year.id }}</BTd>
         <BTd>{{ year.title }}</BTd>
         <BTd>{{ year.created }}</BTd>
