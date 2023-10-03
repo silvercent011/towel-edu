@@ -7,7 +7,7 @@ defineProps<HeaderPageProps>();
 </script>
 
 <template>
-  <div class="container my-4">
+  <div class="container mt-4">
     <h1>{{ title }}</h1>
     <hr />
   </div>

@@ -33,7 +33,7 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  <BForm @submit="onSubmit" class="p-4 p-md-5" novalidate>
+  <BForm @submit="onSubmit" novalidate>
     <BFormGroup label="Série:" label-for="title" class="py-2">
       <BFormInput
         id="title"
