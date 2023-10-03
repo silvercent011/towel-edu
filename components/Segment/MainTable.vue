@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const segments = (await usePB().collection("segment").getFullList({
-  sort: "-created",
-})) as any[];
+const { GetAllSegments } = useSegment();
+
+const segments = (await GetAllSegments()) as any[];
 </script>
 
 <template>

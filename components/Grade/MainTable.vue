@@ -9,10 +9,12 @@ const grades = (await usePB().collection("grade").getFullList({
   <BContainer gutter-y="5">
     <BRow class="my-3 w-full">
       <BCol sm="8">
-        <BFormInput placeholder="Buscar Série" type="search" />
+        <GradeSearchBar />
       </BCol>
       <BCol sm="4">
-        <BButton class="w-100" variant="primary">Criar Série</BButton>
+        <BButton to="/admin/grade/create" class="w-100" variant="primary"
+          >Criar Série</BButton
+        >
       </BCol>
     </BRow>
     <BRow>

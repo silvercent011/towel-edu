@@ -18,6 +18,11 @@ export function useSegment() {
       });
   };
 
+  const GetAllSegments = async () =>
+    await usePB().collection("segment").getFullList({
+      sort: "-created",
+    });
+
   const GetSegmentByID = async (id: string) => {
     const record = await usePB().collection("segment").getOne(id, {
       expand: "grade(segment)",
@@ -26,5 +31,5 @@ export function useSegment() {
     return record;
   };
 
-  return { CreateSegment, GetSegmentByID };
+  return { CreateSegment, GetSegmentByID, GetAllSegments };
 }

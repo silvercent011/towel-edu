@@ -28,6 +28,10 @@ interface ListTableProps {
 }
 
 defineProps<ListTableProps>();
+
+function toGradePage(id: string) {
+  navigateTo(`/admin/grade/${id}`);
+}
 </script>
 
 <template>
@@ -42,7 +46,7 @@ defineProps<ListTableProps>();
       </BTr>
     </BThead>
     <BTbody>
-      <BTr v-for="grade in grades">
+      <BTr v-for="grade in grades" @click="toGradePage(grade.id)">
         <BTd>{{ grade.id }}</BTd>
         <BTd>{{ grade.title }}</BTd>
         <BTd>{{ grade.expand.segment.title }}</BTd>
