@@ -8,12 +8,10 @@ const data = await GetSchoolYearByID(id);
 
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Ano Letivo - {{ data.title }}</h1>
-      <hr />
-    </div>
+    <HeaderPage :title="`Ano Letivo - ${data.title}`" />
 
     <SchoolYearCard :school_year="data" />
+
     <BCard class="mt-3" v-if="data.expand && data.expand['class(school_year)']">
       <BCardBody>
         <BCardTitle> Turmas </BCardTitle>

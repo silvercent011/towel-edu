@@ -8,10 +8,7 @@ const data = await GetTopicByID(id);
 
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Matéria - {{ data.title }}</h1>
-      <hr />
-    </div>
+    <HeaderPage :title="`Matéria - ${data.title}`" />
 
     <TopicCard :topic="data" />
   </BContainer>

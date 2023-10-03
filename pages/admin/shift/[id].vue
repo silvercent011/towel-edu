@@ -8,10 +8,7 @@ const data = await GetShiftByID(id);
 
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Turno - {{ data.title }}</h1>
-      <hr />
-    </div>
+    <HeaderPage :title="`Turno - ${data.title}`" />
 
     <ShiftCard :shift="data" />
   </BContainer>

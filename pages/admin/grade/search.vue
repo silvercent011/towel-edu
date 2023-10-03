@@ -12,10 +12,7 @@ const grades = await usePB().collection("grade").getList(1, 50, {
 
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Pesquisa por "{{ route.query.term }}" em Séries</h1>
-      <hr />
-    </div>
+    <HeaderPage :title="`Pesquisa por ''${route.query.term}'' em Séries`" />
 
     <GradeCard
       v-for="grade in grades.items"

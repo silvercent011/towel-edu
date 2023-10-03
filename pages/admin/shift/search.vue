@@ -12,10 +12,7 @@ const shifts = await usePB().collection("shift").getList(1, 50, {
 
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Pesquisa por "{{ route.query.term }}" em Turnos</h1>
-      <hr />
-    </div>
+    <HeaderPage :title="`Pesquisa por ''${route.query.term}'' em Turnos`" />
 
     <ShiftCard
       v-for="shift in shifts.items"

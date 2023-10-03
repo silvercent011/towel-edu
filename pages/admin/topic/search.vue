@@ -12,10 +12,7 @@ const topics = await usePB().collection("topic").getList(1, 50, {
 
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Pesquisa por "{{ route.query.term }}" em Matérias</h1>
-      <hr />
-    </div>
+    <HeaderPage :title="`Pesquisa por ''${route.query.term}'' em Matérias`" />
 
     <TopicCard
       v-for="topic in topics.items"

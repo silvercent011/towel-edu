@@ -1,9 +1,7 @@
 <template>
   <main class="container">
-    <div class="container my-4">
-      <h1>Administração</h1>
-      <hr />
-    </div>
+    <HeaderPage title="Administração" />
+
     <BTabs justified>
       <BTab title="Ano Letivos">
         <SchoolYearMainTable />

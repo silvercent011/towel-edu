@@ -1,10 +1,6 @@
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Criar Série</h1>
-      <hr />
-    </div>
-
+    <HeaderPage title="Criar Série" />
     <GradeCreateForm />
   </BContainer>
 </template>

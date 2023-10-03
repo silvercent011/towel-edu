@@ -8,10 +8,7 @@ const data = await GetSegmentByID(id);
 
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Segmento - {{ data.title }}</h1>
-      <hr />
-    </div>
+    <HeaderPage :title="`Segmento - ${data.title}`" />
 
     <SegmentCard :segment="data" />
     <BCard class="mt-3" v-if="data.expand && data.expand['grade(segment)']">

@@ -8,11 +8,7 @@ const data = await GetGradeByID(id);
 
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Série - {{ data.title }}</h1>
-      <hr />
-    </div>
-
+    <HeaderPage :title="`Série - ${data.title}`" />
     <GradeCard :grade="data" />
   </BContainer>
 </template>

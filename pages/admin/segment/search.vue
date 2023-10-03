@@ -12,10 +12,7 @@ const segments = await usePB().collection("segment").getList(1, 50, {
 
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Pesquisa por "{{ route.query.term }}" em Segmentos</h1>
-      <hr />
-    </div>
+    <HeaderPage :title="`Pesquisa por ''${route.query.term}'' em Segmentos`" />
 
     <SegmentCard
       v-for="segment in segments.items"

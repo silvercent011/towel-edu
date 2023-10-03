@@ -1,9 +1,6 @@
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Criar Turno</h1>
-      <hr />
-    </div>
+    <HeaderPage title="Criar Turno" />
 
     <ShiftCreateForm />
   </BContainer>

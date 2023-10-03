@@ -10,10 +10,9 @@ const schoolYears = await usePB().collection("school_year").getList(1, 50, {
 
 <template>
   <BContainer>
-    <div class="container my-4">
-      <h1>Pesquisa por "{{ route.query.term }}" em Anos Letivos</h1>
-      <hr />
-    </div>
+    <HeaderPage
+      :title="`Pesquisa por ''${route.query.term}'' em Anos Letivos`"
+    />
 
     <SchoolYearCard
       v-for="school_year in schoolYears.items"
