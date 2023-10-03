@@ -13,6 +13,10 @@ interface ListTableProps {
 }
 
 defineProps<ListTableProps>();
+
+function toShiftPage(id: string) {
+  navigateTo(`/admin/shift/${id}`);
+}
 </script>
 
 <template>
@@ -26,11 +30,11 @@ defineProps<ListTableProps>();
       </BTr>
     </BThead>
     <BTbody>
-      <BTr v-for="year in shifts">
-        <BTd>{{ year.id }}</BTd>
-        <BTd>{{ year.title }}</BTd>
-        <BTd>{{ year.created }}</BTd>
-        <BTd>{{ year.updated }}</BTd>
+      <BTr v-for="shift in shifts" @click="toShiftPage(shift.id)">
+        <BTd>{{ shift.id }}</BTd>
+        <BTd>{{ shift.title }}</BTd>
+        <BTd>{{ shift.created }}</BTd>
+        <BTd>{{ shift.updated }}</BTd>
       </BTr>
     </BTbody>
   </BTableSimple>

@@ -8,10 +8,12 @@ const shifts = (await usePB().collection("shift").getFullList({
   <BContainer gutter-y="5">
     <BRow class="my-3 w-full">
       <BCol sm="8">
-        <BFormInput placeholder="Buscar Turno" type="search" />
+        <ShiftSearchBar />
       </BCol>
       <BCol sm="4">
-        <BButton class="w-100" variant="primary">Criar Turno</BButton>
+        <BButton to="/admin/shift/create" class="w-100" variant="primary"
+          >Criar Turno</BButton
+        >
       </BCol>
     </BRow>
     <BRow>
