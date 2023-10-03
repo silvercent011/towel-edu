@@ -13,6 +13,10 @@ interface ListTableProps {
 }
 
 defineProps<ListTableProps>();
+
+function toTopicPage(id: string) {
+  navigateTo(`/admin/topic/${id}`);
+}
 </script>
 
 <template>
@@ -26,11 +30,11 @@ defineProps<ListTableProps>();
       </BTr>
     </BThead>
     <BTbody>
-      <BTr v-for="year in topics">
-        <BTd>{{ year.id }}</BTd>
-        <BTd>{{ year.title }}</BTd>
-        <BTd>{{ year.created }}</BTd>
-        <BTd>{{ year.updated }}</BTd>
+      <BTr v-for="topic in topics" @click="toTopicPage(topic.id)">
+        <BTd>{{ topic.id }}</BTd>
+        <BTd>{{ topic.title }}</BTd>
+        <BTd>{{ topic.created }}</BTd>
+        <BTd>{{ topic.updated }}</BTd>
       </BTr>
     </BTbody>
   </BTableSimple>
