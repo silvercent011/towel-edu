@@ -8,7 +8,10 @@ defineProps<HeaderPageProps>();
 
 <template>
   <div class="container mt-4">
-    <h1>{{ title }}</h1>
+    <slot />
+    <h1 class="d-flex align-items-center gap-3">
+      <slot name="icon" />{{ title }}
+    </h1>
     <hr />
   </div>
 </template>

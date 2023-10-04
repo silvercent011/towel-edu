@@ -1,6 +1,14 @@
+<script setup lang="ts">
+import Admin from "~icons/mdi/security";
+</script>
+
 <template>
   <main class="container">
-    <HeaderPage title="Administração" />
+    <HeaderPage title="Administração">
+      <template #icon>
+        <Admin />
+      </template>
+    </HeaderPage>
 
     <BTabs justified>
       <BTab title="Ano Letivos">
