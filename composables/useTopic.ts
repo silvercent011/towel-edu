@@ -26,5 +26,10 @@ export function useTopic() {
     return record;
   };
 
-  return { CreateTopic, GetTopicByID };
+  const GetAllTopics = async () =>
+    await usePB().collection("topic").getFullList({
+      sort: "-created",
+    });
+
+  return { CreateTopic, GetTopicByID, GetAllTopics };
 }

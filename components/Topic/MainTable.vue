@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const topics = (await usePB().collection("topic").getFullList({
-  sort: "-created",
-})) as any[];
+const { GetAllTopics } = useTopic();
+
+const topics = (await GetAllTopics()) as any[];
 </script>
 
 <template>

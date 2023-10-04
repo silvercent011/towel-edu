@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const schoolYears = (await usePB().collection("school_year").getFullList({
-  sort: "-created",
-})) as any[];
+const { GetAllSchoolYears } = useSchoolYear();
+
+const schoolYears = (await GetAllSchoolYears()) as any[];
 </script>
 
 <template>

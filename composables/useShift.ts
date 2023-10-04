@@ -26,5 +26,10 @@ export function useShift() {
     return record;
   };
 
-  return { CreateShift, GetShiftByID };
+  const GetAllShifts = async () =>
+    await usePB().collection("shift").getFullList({
+      sort: "-created",
+    });
+
+  return { CreateShift, GetShiftByID, GetAllShifts };
 }

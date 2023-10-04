@@ -52,6 +52,10 @@ interface ListTableProps {
 }
 
 defineProps<ListTableProps>();
+
+function toClassPage(id: string) {
+  navigateTo(`/admin/class/${id}`);
+}
 </script>
 
 <template>
@@ -68,14 +72,14 @@ defineProps<ListTableProps>();
       </BTr>
     </BThead>
     <BTbody>
-      <BTr v-for="year in classes">
-        <BTd>{{ year.id }}</BTd>
-        <BTd>{{ year.title }}</BTd>
-        <BTd>{{ year.expand.grade.title }}</BTd>
-        <BTd>{{ year.expand.shift.title }}</BTd>
-        <BTd>{{ year.expand.school_year.title }}</BTd>
-        <BTd>{{ year.created }}</BTd>
-        <BTd>{{ year.updated }}</BTd>
+      <BTr v-for="class_ in classes" @click="toClassPage(class_.id)">
+        <BTd>{{ class_.id }}</BTd>
+        <BTd>{{ class_.title }}</BTd>
+        <BTd>{{ class_.expand.grade.title }}</BTd>
+        <BTd>{{ class_.expand.shift.title }}</BTd>
+        <BTd>{{ class_.expand.school_year.title }}</BTd>
+        <BTd>{{ class_.created }}</BTd>
+        <BTd>{{ class_.updated }}</BTd>
       </BTr>
     </BTbody>
   </BTableSimple>

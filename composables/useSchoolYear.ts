@@ -26,5 +26,10 @@ export function useSchoolYear() {
     return record;
   };
 
-  return { CreateSchoolYear, GetSchoolYearByID };
+  const GetAllSchoolYears = async () =>
+    await usePB().collection("school_year").getFullList({
+      sort: "-created",
+    });
+
+  return { CreateSchoolYear, GetSchoolYearByID, GetAllSchoolYears };
 }

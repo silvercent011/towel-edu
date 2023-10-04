@@ -1,8 +1,6 @@
 <script setup lang="ts">
-const grades = (await usePB().collection("grade").getFullList({
-  sort: "-created",
-  expand: `segment`,
-})) as any[];
+const { GetAllGrades } = useGrade();
+const grades = (await GetAllGrades()) as any[];
 </script>
 
 <template>

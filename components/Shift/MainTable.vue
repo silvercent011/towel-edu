@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const shifts = (await usePB().collection("shift").getFullList({
-  sort: "-created",
-})) as any[];
+const { GetAllShifts } = useShift();
+
+const shifts = (await GetAllShifts()) as any[];
 </script>
 
 <template>

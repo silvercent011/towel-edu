@@ -27,5 +27,11 @@ export function useGrade() {
     return record;
   };
 
-  return { CreateGrade, GetGradeByID };
+  const GetAllGrades = async () =>
+    await usePB().collection("grade").getFullList({
+      sort: "-created",
+      expand: `segment`,
+    });
+
+  return { CreateGrade, GetGradeByID, GetAllGrades };
 }
