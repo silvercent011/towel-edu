@@ -20,7 +20,7 @@ const classes = await usePB().collection("class").getList(1, 50, {
       class="my-3"
       :class_="class_"
     >
-      <BButton variant="primary" :to="`/admin/class/${class_.id}`"
+      <BButton variant="primary" :to="`/academico/class/${class_.id}`"
         >Detalhes</BButton
       >
     </ClassCard>

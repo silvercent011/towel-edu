@@ -80,35 +80,6 @@
     }
   },
   {
-    "id": "5n3szb0hhoylo7q",
-    "name": "school_year",
-    "type": "base",
-    "system": false,
-    "schema": [
-      {
-        "system": false,
-        "id": "icpn3njl",
-        "name": "title",
-        "type": "text",
-        "required": true,
-        "presentable": false,
-        "unique": false,
-        "options": {
-          "min": null,
-          "max": null,
-          "pattern": "\\d+(\\.\\d+)?"
-        }
-      }
-    ],
-    "indexes": [],
-    "listRule": "",
-    "viewRule": "",
-    "createRule": "@request.auth.id != \"\" && (@request.auth.role = \"ADMIN\" || @request.auth.role = \"MANAGER\")",
-    "updateRule": "@request.auth.id != \"\" && (@request.auth.role = \"ADMIN\" || @request.auth.role = \"MANAGER\")",
-    "deleteRule": null,
-    "options": {}
-  },
-  {
     "id": "7e6tad975yerynb",
     "name": "shift",
     "type": "base",
@@ -117,35 +88,6 @@
       {
         "system": false,
         "id": "bziiazvr",
-        "name": "title",
-        "type": "text",
-        "required": true,
-        "presentable": false,
-        "unique": false,
-        "options": {
-          "min": null,
-          "max": null,
-          "pattern": ""
-        }
-      }
-    ],
-    "indexes": [],
-    "listRule": "",
-    "viewRule": "",
-    "createRule": "@request.auth.id != \"\" && (@request.auth.role = \"ADMIN\" || @request.auth.role = \"MANAGER\")",
-    "updateRule": "@request.auth.id != \"\" && (@request.auth.role = \"ADMIN\" || @request.auth.role = \"MANAGER\")",
-    "deleteRule": null,
-    "options": {}
-  },
-  {
-    "id": "6m4dc25es6e12vd",
-    "name": "segment",
-    "type": "base",
-    "system": false,
-    "schema": [
-      {
-        "system": false,
-        "id": "ux9svw0v",
         "name": "title",
         "type": "text",
         "required": true,
@@ -265,7 +207,7 @@
         "id": "90yzfth1",
         "name": "school_year",
         "type": "relation",
-        "required": false,
+        "required": true,
         "presentable": false,
         "unique": false,
         "options": {
@@ -281,7 +223,7 @@
         "id": "6pnpsswt",
         "name": "grade",
         "type": "relation",
-        "required": false,
+        "required": true,
         "presentable": false,
         "unique": false,
         "options": {
@@ -297,7 +239,7 @@
         "id": "voehmxr8",
         "name": "shift",
         "type": "relation",
-        "required": false,
+        "required": true,
         "presentable": false,
         "unique": false,
         "options": {
@@ -324,6 +266,111 @@
     "viewRule": "",
     "createRule": "@request.auth.id != \"\" && (@request.auth.role = \"ADMIN\" || @request.auth.role = \"MANAGER\")",
     "updateRule": "@request.auth.id != \"\" && (@request.auth.role = \"ADMIN\" || @request.auth.role = \"MANAGER\")",
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "5n3szb0hhoylo7q",
+    "name": "school_year",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "system": false,
+        "id": "icpn3njl",
+        "name": "title",
+        "type": "text",
+        "required": true,
+        "presentable": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": "\\d+(\\.\\d+)?"
+        }
+      }
+    ],
+    "indexes": ["CREATE UNIQUE INDEX `idx_jgLcWgA` ON `school_year` (`title`)"],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "@request.auth.id != \"\" && (@request.auth.role = \"ADMIN\" || @request.auth.role = \"MANAGER\")",
+    "updateRule": "@request.auth.id != \"\" && (@request.auth.role = \"ADMIN\" || @request.auth.role = \"MANAGER\")",
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "6m4dc25es6e12vd",
+    "name": "segment",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "system": false,
+        "id": "ux9svw0v",
+        "name": "title",
+        "type": "text",
+        "required": true,
+        "presentable": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "indexes": ["CREATE UNIQUE INDEX `idx_GLG1aJX` ON `segment` (`title`)"],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "@request.auth.id != \"\" && (@request.auth.role = \"ADMIN\" || @request.auth.role = \"MANAGER\")",
+    "updateRule": "@request.auth.id != \"\" && (@request.auth.role = \"ADMIN\" || @request.auth.role = \"MANAGER\")",
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "vv67i985cbbapfs",
+    "name": "student_class",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "system": false,
+        "id": "sv66yg5p",
+        "name": "class",
+        "type": "relation",
+        "required": true,
+        "presentable": false,
+        "unique": false,
+        "options": {
+          "collectionId": "xtncohc50p8ohmu",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      },
+      {
+        "system": false,
+        "id": "chbjlq8h",
+        "name": "student",
+        "type": "relation",
+        "required": true,
+        "presentable": false,
+        "unique": false,
+        "options": {
+          "collectionId": "46f0dp56iwnbwb7",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
     "deleteRule": null,
     "options": {}
   },
@@ -376,22 +423,6 @@
       },
       {
         "system": false,
-        "id": "xwrbngql",
-        "name": "class",
-        "type": "relation",
-        "required": true,
-        "presentable": false,
-        "unique": false,
-        "options": {
-          "collectionId": "xtncohc50p8ohmu",
-          "cascadeDelete": false,
-          "minSelect": null,
-          "maxSelect": 1,
-          "displayFields": null
-        }
-      },
-      {
-        "system": false,
         "id": "0srzmrzw",
         "name": "user",
         "type": "relation",
@@ -437,8 +468,8 @@
       }
     ],
     "indexes": [],
-    "listRule": null,
-    "viewRule": null,
+    "listRule": "",
+    "viewRule": "",
     "createRule": null,
     "updateRule": null,
     "deleteRule": null,

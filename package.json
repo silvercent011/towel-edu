@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev & ./pocketbase/pocketbase serve",
+    "dev": "nuxt dev --host & ./pocketbase/pocketbase serve",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"

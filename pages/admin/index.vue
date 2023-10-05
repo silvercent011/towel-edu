@@ -26,12 +26,6 @@ import Admin from "~icons/mdi/security";
       <BTab title="Matéria">
         <TopicMainTable />
       </BTab>
-      <BTab title="Turmas">
-        <ClassMainTable />
-      </BTab>
-      <BTab title="Unidades">
-        <!-- <UnitMainTable /> -->
-      </BTab>
     </BTabs>
   </main>
 </template>

@@ -7,7 +7,7 @@ const { value: title } = useField<string>("title");
 
 const SearchClass = (title: string) => {
   navigateTo({
-    path: `/admin/class/search`,
+    path: `/academico/class/search`,
     query: {
       term: title,
     },

@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import Home from "~icons/bi/house";
+import Academic from "~icons/mdi/academic-cap";
 import Students from "~icons/mdi/account-school";
 import Notes from "~icons/mdi/file-document-multiple";
 import Admin from "~icons/mdi/security";
+
 const UserData = computed(() => usePB().authStore.model);
 
 const links = [
@@ -15,6 +17,11 @@ const links = [
     title: "Administração",
     icon: Admin,
     href: "/admin",
+  },
+  {
+    title: "Acadêmico",
+    icon: Academic,
+    href: "/academico",
   },
   {
     title: "Alunos",

@@ -11,7 +11,7 @@ const classes = (await GetAllClasses()) as any[];
         <ClassSearchBar />
       </BCol>
       <BCol sm="4">
-        <BButton to="/admin/class/create" class="w-100" variant="primary"
+        <BButton to="/academico/class/create" class="w-100" variant="primary"
           >Criar Turma</BButton
         >
       </BCol>

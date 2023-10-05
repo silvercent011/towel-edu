@@ -54,7 +54,7 @@ interface ListTableProps {
 defineProps<ListTableProps>();
 
 function toClassPage(id: string) {
-  navigateTo(`/admin/class/${id}`);
+  navigateTo(`/academico/class/${id}`);
 }
 </script>
 

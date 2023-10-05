@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Microsoft from "~icons/mdi/microsoft";
+
 const validationSchema = toTypedSchema(
   z.object({
     email: z
@@ -22,7 +24,7 @@ const { handleSubmit, errors } = useForm({
   validationSchema,
 });
 
-const { SignInWithEmailAndPassword } = useSignIn();
+const { SignInWithEmailAndPassword, SignInWithAzureAD } = useSignIn();
 
 const { value: email } = useField<string>("email");
 
@@ -74,6 +76,16 @@ const onSubmit = handleSubmit(async (values) => {
       type="submit"
     >
       Entrar
+    </BButton>
+
+    <BButton
+      size="md"
+      variant="primary"
+      class="w-100 py-2 mt-2 d-flex align-items-center justify-content-center gap-3"
+      @click="SignInWithAzureAD"
+    >
+      <Microsoft />
+      Entrar com Microsoft
     </BButton>
     <hr class="my-4" />
     <small class="text-body-secondary">Towel Edu SAS v1.0.0</small>
