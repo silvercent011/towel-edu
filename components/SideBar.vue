@@ -4,7 +4,7 @@ import Academic from "~icons/mdi/academic-cap";
 import Students from "~icons/mdi/account-school";
 import Notes from "~icons/mdi/file-document-multiple";
 import Admin from "~icons/mdi/security";
-
+import PocketBase from "~icons/simple-icons/pocketbase";
 const UserData = computed(() => usePB().authStore.model);
 
 const links = [
@@ -34,6 +34,8 @@ const links = [
     href: "/notas",
   },
 ];
+
+const config = useRuntimeConfig();
 </script>
 
 <template>
@@ -45,7 +47,7 @@ const links = [
       href="/"
       class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none link-dark"
     >
-      <span class="fs-4">Towel Edu</span>
+      <span class="fs-4">{{ config.public.instance.name || `Towel Edu` }}</span>
     </a>
     <hr />
     <ul class="nav nav-pills flex-column mb-auto gap-2">
@@ -59,6 +61,19 @@ const links = [
           {{ link.title }}
         </NuxtLink>
       </li>
+      <DevOnly>
+        <li class="nav-item">
+          <NuxtLink
+            class="nav-link d-flex align-items-center link-dark bg-warning"
+            to="http://localhost:8090/_/"
+            external
+            target="_blank"
+          >
+            <component :is="PocketBase" class="bi pe-none me-2" />
+            Acessar PocketBase
+          </NuxtLink>
+        </li>
+      </DevOnly>
     </ul>
     <hr />
 

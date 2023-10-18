@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const UserData = computed(() => usePB().authStore.model);
+const config = useRuntimeConfig();
 </script>
 
 <template>
@@ -9,7 +10,9 @@ const UserData = computed(() => usePB().authStore.model);
         href="/"
         class="d-flex align-items-center text-body-emphasis text-decoration-none"
       >
-        <span class="fs-4">Towel Edu</span>
+        <span class="fs-4">{{
+          config.public.instance.name || `Towel Edu`
+        }}</span>
       </a>
     </header>
 

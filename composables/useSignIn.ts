@@ -27,7 +27,7 @@ export function useSignIn() {
         },
       })
       .then(async (res) => {
-        console.log(res);
+        // console.log(res);
         await usePB().collection("users").update(res.record.id, {
           name: res.meta?.name,
           avatar: res.meta?.avatarUrl,

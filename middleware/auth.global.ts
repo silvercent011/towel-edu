@@ -1,11 +1,14 @@
 export default defineNuxtRouteMiddleware((to) => {
-  const pb = usePB();
+  useNuxtApp().$pb.authStore.isValid;
+
+  console.log(useNuxtApp().$pb.authStore);
 
   if (to.path === "/signin") {
     return;
   }
 
-  if (!pb.authStore.isValid) {
+  if (!useNuxtApp().$pb.authStore.isValid) {
+    console.log("not valid");
     return "/signin";
   }
 });

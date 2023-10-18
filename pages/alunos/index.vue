@@ -9,5 +9,10 @@ import Students from "~icons/mdi/account-school";
         <Students />
       </template>
     </HeaderPage>
+    <BContainer>
+      <BRow>
+        <StudentMainTable />
+      </BRow>
+    </BContainer>
   </main>
 </template>

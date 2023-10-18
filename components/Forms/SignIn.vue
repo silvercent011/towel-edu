@@ -33,6 +33,8 @@ const { value: password } = useField<string>("password");
 const onSubmit = handleSubmit(async (values) => {
   await SignInWithEmailAndPassword(values.email, values.password);
 });
+
+const config = useRuntimeConfig();
 </script>
 
 <template>
@@ -41,6 +43,8 @@ const onSubmit = handleSubmit(async (values) => {
     class="p-4 p-md-5 border rounded-3 bg-body-tertiary"
     novalidate
   >
+    <h2 class="fw-bold">Entrar</h2>
+
     <BFormGroup label="Email:" label-for="email" class="py-2">
       <BFormInput
         id="email"
@@ -88,6 +92,8 @@ const onSubmit = handleSubmit(async (values) => {
       Entrar com Microsoft
     </BButton>
     <hr class="my-4" />
-    <small class="text-body-secondary">Towel Edu SAS v1.0.0</small>
+    <small class="text-body-secondary"
+      >Powered by Towel Edu SAS v{{ config.public.towelVersion }}</small
+    >
   </BForm>
 </template>
